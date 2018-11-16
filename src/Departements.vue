@@ -1,8 +1,10 @@
 <template>
-    <div>
-        <h2>Liste des départements français :</h2>
-        <li v-for=" d in departements " v-bind:key="d.id">{{ d.nom }}</li>
-
+    <div id="departements">
+        <h2>Les départements</h2>
+        <select v-model="selected">
+            <option disabled value="">Sélectionner un département</option>
+            <option v-for="option in departements" v-bind:key="option.code" v-bind:value="option.code"> {{ option.nom }} ({{ option.code }})</option>
+        </select>
     </div>
 </template>
 
@@ -14,7 +16,8 @@
         name: 'departements',
         data() {
             return{
-                departements: []
+                departements: [],
+                selected:""
             }
         },
         created: function(){

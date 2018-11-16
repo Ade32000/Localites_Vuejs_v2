@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Happy :-) Open Data</h1>
     <regions></regions>
     <departements></departements>
     <communes></communes>

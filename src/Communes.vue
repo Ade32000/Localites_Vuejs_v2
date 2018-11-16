@@ -1,7 +1,10 @@
 <template>
-    <div>
-        <h2>Liste des communes françaises :</h2>
-        <li v-for=" c in communes " v-bind:key="c.id">{{ c.nom }}</li>
+    <div id="communes">
+        <h2>Les communes</h2>
+        <select v-model="selected">
+            <option disabled value="">Sélectionner une commune</option>
+            <option v-for="option in communes" v-bind:key="option.code" v-bind:value="option.code">{{ option.nom }} ({{ option.code }})</option>
+        </select>
     </div>
 </template>
 
@@ -13,7 +16,8 @@
         name: 'communes',
         data() {
             return{
-                communes: []
+                communes: [],
+                selected:""
             }
         },
         created: function(){
