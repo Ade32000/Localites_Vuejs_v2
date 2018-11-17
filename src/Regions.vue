@@ -1,19 +1,29 @@
 <template>
     <div id="regions">
-        <h2>Les régions</h2>
-        <select v-model="selected">
-            <option disabled value="">Sélectionner une région</option>
-            <option v-for="option in regions" v-bind:key="option.code" v-bind:value="option.code">{{ option.nom }} ({{ option.code }})</option>
-        </select>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Les régions</label>
+            </div>
+            <select v-model="selected" 
+                    v-on:change="displayRegions" class="custom-select" id="inputGroupSelect01">
+                <option disabled value="">Sélectionner une région...</option>
+                <option v-for="option in regions" 
+                        v-bind:key="option.code" 
+                        v-bind:value="option.code">
+                        
+                        {{ option.nom }} ({{ option.code }})
+                </option>
+            </select>
+        </div>
     </div>
 </template>
 
 
 <script>
+    import bootstrap from 'bootstrap'
     import $ from 'jquery';
-    import Bus from './Bus.js'
-
-
+    //import Bus from './Bus.js'
+    
     export default {
         name: 'regions',
         data() {
@@ -22,23 +32,21 @@
                 selected:""
             }
         },
+        methods: {
+            displayRegions: function(e) {
+                console.log(e.target.value)
+                this.$root.$emit('updateRegion',e.target.value)
+                console.log('Région a envoyé le code :'+ e.target.value+' c\'est cool !')
+            }
+        },
         created: function(){
                 $.ajax('https://geo.api.gouv.fr/regions').done(function(d){
+                    console.log(d[1].codeRegion)
                     this.regions = d;
                 }.bind(this))
-        },
-            // this.displayRegions()
+        }, 
+    }
 
-            // Bus.$emit('some-event')
-            
-        
-        methods: {
-            displayRegions: function () {
-            console.log('hello from mixin!')
-    }
-  }
-        
-    }
     </script>
 
 

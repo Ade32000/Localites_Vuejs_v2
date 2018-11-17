@@ -8,10 +8,11 @@
 </template>
 
 <script>
-// import routes from './routes.js'
+import bootstrap from 'bootstrap'
 import Regions from './Regions'
 import Departements from './Departements'
 import Communes from './Communes'
+
 
 export default {
   name: 'app',
