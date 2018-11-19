@@ -1,5 +1,4 @@
 <template>
-    <div id="departements">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect02">Les départements</label>
@@ -16,7 +15,6 @@
                 </option>
             </select>
         </div>
-    </div>
 </template>
 
 

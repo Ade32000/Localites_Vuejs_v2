@@ -1,5 +1,4 @@
 <template>
-    <div id="communes">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect03">Les communes</label>
@@ -14,7 +13,6 @@
                 </option>
             </select>
         </div>
-    </div>
 </template>
 
 
@@ -57,11 +55,5 @@
 <style>
     @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-    .displayData{
-        display: flex;
-        flex-direction: column;
-    }
-    .card{
-        display: flex;
-    }
+
 </style>

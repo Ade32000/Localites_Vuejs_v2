@@ -1,6 +1,6 @@
 <template>
-    <div id="final">
-        <div class="displayData">
+    <div id="final" class="container">
+        <div class="container">
             <div  class="card" style="width: 18rem;"
                     v-for="info in commune"
                     v-bind:key="info.code"
@@ -45,5 +45,10 @@ export default {
 
 <style>
     @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
+    .card{
+        margin: 0;
+    }
+    .container{
+        /* margin-top: 1%; */
+    }
 </style>

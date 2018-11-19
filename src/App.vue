@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <h1>HA.PP.Y :-) Open Data</h1>
     <regions></regions>
     <departements></departements>
@@ -14,7 +14,21 @@ import Regions from './Regions'
 import Departements from './Departements'
 import Communes from './Communes'
 import FinalCard from './FinalCard'
+import Chargement from './Chargement'
 
+// const AsyncComponent = () => ({
+//   // Le composant à charger (doit être une `Promise`)
+//   component: import('./Regions')
+//   // Un composant à utiliser pendant que le composant asynchrone se charge
+//   loading: Chargement,
+//   // Un composant d'erreur à utiliser au cas où le chargement échoue
+//   error: ErrorComponent,
+//   // Le délai à patienter avant d'afficher le composant de chargement. Par défaut : 200ms.
+//   delay: 200,
+//   // Le composant d'erreur sera affiché si un délai de timeout est fourni et dépassé.
+//   // Par défaut: délai infini.
+//   timeout: 3000
+// })
 
 export default {
   name: 'app',
@@ -27,7 +41,8 @@ export default {
     Regions,
     Departements,
     Communes,
-    FinalCard
+    FinalCard,
+    Chargement
   }
 }
 </script>
@@ -45,6 +60,7 @@ export default {
 
 h1, h2 {
   font-weight: normal;
+  margin-bottom: 20%;
 }
 
 ul {
@@ -59,5 +75,8 @@ li {
 
 a {
   color: #42b983;
+}
+.container{
+  margin-top: 30% !important;
 }
 </style>
