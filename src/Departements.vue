@@ -1,16 +1,21 @@
 <template>
     <div id="departements">
-        <h2>Les départements</h2>
-        <select v-model="selected"
-                v-on:change="displayDepartements">
-            <option disabled value="">Sélectionner un département</option>
-            <option v-for="option in departements" 
-                    v-bind:key="option.code" 
-                    v-bind:value="option.code"> 
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect02">Les départements</label>
+            </div>
+            <select v-model="selected"
+                    v-on:change="displayDepartements" class="custom-select" id="inputGroupSelect02">
+                <option disabled value="">Sélectionner un département...</option>
+                <option v-for="option in departements" 
+                        v-bind:key="option.code" 
+                        v-bind:value="option.code"> 
 
-                        {{ option.nom }} ({{ option.code }})
-            </option>
-        </select>
+                            {{ option.nom }} ({{ option.code }})
+                        
+                </option>
+            </select>
+        </div>
     </div>
 </template>
 
@@ -28,6 +33,7 @@
         },
         methods: {
             displayDepartements: function(e){
+                console.log(e.target.length)
                 this.$root.$emit('updateDepartement', e.target.value)
                 console.log('Département a envoyé le code :'+ e.target.value+' c\'est fun !')
             }
@@ -37,7 +43,7 @@
             {
                 console.log(data)
                 $.ajax('https://geo.api.gouv.fr/regions/'+data+'/departements').done(function(d){
-                console.log('ca marche')                   
+                console.log('ça marche')                   
                 this.departements = d;
                 }.bind(this))
             });        
@@ -54,5 +60,5 @@
 
 
 <style>
-
+    @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 </style>

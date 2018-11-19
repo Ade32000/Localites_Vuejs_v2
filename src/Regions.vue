@@ -13,6 +13,7 @@
                         
                         {{ option.nom }} ({{ option.code }})
                 </option>
+                <!-- <span class="badge">{{departements.length}}</span> -->
             </select>
         </div>
     </div>
@@ -51,6 +52,6 @@
 
 
 <style>
-
+    @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 </style>
 

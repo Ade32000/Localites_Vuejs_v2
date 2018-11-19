@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <h1>Happy :-) Open Data</h1>
+    <h1>HA.PP.Y :-) Open Data</h1>
     <regions></regions>
     <departements></departements>
     <communes></communes>
+    <final-card></final-card>
   </div>
 </template>
 
@@ -12,24 +13,27 @@ import bootstrap from 'bootstrap'
 import Regions from './Regions'
 import Departements from './Departements'
 import Communes from './Communes'
+import FinalCard from './FinalCard'
 
 
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'hello world'
     }
   },
   components: {
     Regions,
     Departements,
-    Communes
+    Communes,
+    FinalCard
   }
 }
 </script>
 
 <style>
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
